@@ -29,4 +29,6 @@ public class Tehtava6ATests {
     }
 
     // TODO: Tehtävä 6a: Kirjoita tähän pyydetyt ominaisuustestit
+
+    // TODO: Tehtävä 6a: Vaihtoehtoisesti, kirjoita tähän 5 kpl ominaisuutta testaavaa yksikkötestiä
 }

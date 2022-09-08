@@ -1,5 +1,14 @@
 package fi.utu.tech.ooj.exercise1;
 
+class Numeroija {
+    static int laskuri = 1;
+
+    void numeroi(String[] rivit) {
+        for (var rivi : rivit) {
+            System.out.println(laskuri++ + " " + rivi);
+        }
+    }
+}
 public class Tehtava4 {
     /**
      * Palauttaa taulukon, jonka kukin alkio sisältää ko. alkion ja kaikkien

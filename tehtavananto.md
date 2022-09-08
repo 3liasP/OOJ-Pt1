@@ -126,19 +126,24 @@ public static int[] cumulativeSums(int[] arr) {
 Tehdään kutsu `int[] result = cumulativeSums(numbers);`, missä `numbers`
 on ennestään olemassa oleva taulukko
 
-***B.*** Numeroija-luokan rutiini numeroi saa syötteenään merkkijonotaulukon. Taulukko tulostetaan niin, että 
-sen jokainen alkio tulostuu omalle rivilleen rivinumeron kera. Luokkaa ja sen metodia käytetään alla olevassa 
-esimerkissä.
+***B.*** `Numeroija`-luokan rutiini `numeroi` saa syötteenään
+merkkijonotaulukon. Taulukko tulostetaan niin, että sen jokainen
+alkio tulostuu omalle rivilleen rivin alkuun tulostettavan
+rivinumeron kera. Luokkaa ja sen metodia käytetään alla olevassa 
+esimerkissä. Tarkoituksena on, että jokainen instanssi `Numeroija`:sta
+sisältäisi itsenäisen kirjanpidoln rivinumeroinnista ja jokainen
+`numeroi`-kutsu jatkaisi edellisestä numeroinnista.
 
-Toimiiko Numeroija-luokka ja sen rutiini oikein? Jos rutiini ei toimi oikein, mikä siihen on syynä? Entä miten se 
+Toimiiko `Numeroija`-luokka ja sen rutiini määrittelynsä mukaisesti?
+Jos rutiini ei toimi oikein, mikä siihen on syynä? Entä miten se 
 pitää korjata?
 
 ```java
 public static void main(String[] args) {
     Numeroija num1 = new Numeroija();
     Numeroija num2 = new Numeroija();
-    num1.numeroi(new String[]{"moi", "hei", "päivää"});
-    num2.numeroi(new String[]{"kyllä", "ei","ehkä"});
+    num1.numeroi(new String[] {"moi", "hei", "päivää"});
+    num2.numeroi(new String[] {"kyllä", "ei","ehkä"});
 }
 
 class Numeroija {
@@ -146,7 +151,9 @@ class Numeroija {
     
     void numeroi(String[] rivit) {
         int uusiLaskuri = laskuri;
-        for (var rivi : rivit) System.out.println(uusiLaskuri++ + " " + rivi);
+        for (var rivi : rivit) {
+            System.out.println(uusiLaskuri++ + " " + rivi);
+        }
         laskuri = uusiLaskuri;
     }
 }
@@ -162,9 +169,14 @@ class Numeroija {
 
 ## Tehtävä 5
 
-Tarkastellaan funktiota `public int[] withoutDuplicates(int[] arr)`. Funktion
-määrittelemiseksi on ehdotettu seuraavia loppuehdon osia
-`(@.pre OSA1 && OSA2 && ...)`, joista tosin ensimmäinen on virheellinen.
+Tarkastellaan rutiinia `public int[] withoutDuplicates(int[] arr)`. Rutiinin
+tarkoitus on muodostaa annetun taulukon pohjalta uusi taulukko, joka sisältää
+kaikki alkuperäisen taulukan sisältämät arvot ilman duplikaatteja. Esimerkiksi
+taulukko `[ 1, 1, 1, 2, 2, 3]` tuottaisi paluuarvona taulukon `[ 1, 2, 3 ]` .
+
+Rutiinin määrittelemiseksi on ehdotettu seuraavia loppuehdon osia
+`(@.pre OSA-A && OSA-B && OSA-C && OSA-D)`, joista tosin ensimmäinen vaikuttaa
+olevan ristiriidassa sanallisen määrittelyn kanssa.
 
 ***A.*** `FORALL(i : 0 <= i < RESULT.length; !EXISTS(j : 0 <= j < RESULT.length; RESULT[i] == RESULT[j]))`
 
@@ -188,8 +200,9 @@ palautettavista taulukoista toteuttavat kunkin loppuehdon osan?
 
 ***M.*** [1, 3, 1]
 
-Vastauksen tehtävään voit esittää esimerkiksi seuraavanlaisena taulukkona, johon merkitään X niihin kohtiin,
-joissa tulostaulukko täyttää loppuehdon. Jos esimerkiksi tulostaulukko m täyttäisi loppuehdon a, merkittäisiin
+Vastauksen tehtävään voit esittää esimerkiksi seuraavanlaisena taulukkona,
+johon merkitään X niihin kohtiin, joissa tulostaulukko täyttää loppuehdon.
+Jos esimerkiksi tulostaulukko m täyttäisi loppuehdon a, merkittäisiin
 X taulukon riville a sarakkeeseen m.
 
 ```
@@ -250,6 +263,16 @@ voi rajata tehtävän kontekstissa.
 
 Ominaisuus on myös kuvattu em. määrittelyn loppuehdon toisella rivillä.
 
+Huom! Voit myös tässä A-kohdan tehtävässä rakentaa ominaisuustestin
+sijaan 5 kpl ominaisuutta testaavia yksikkötestitapauksia. Muista,
+että esim. `assertEquals` ei vertaa oikein kahta taulukkoa vaikka toimisikin
+yksittäisille alkioille.
+
+Huom! Voit myös tässä A-kohdan tehtävässä rakentaa ominaisuustestin
+sijaan 10 kpl ominaisutta testaavia `assert`-väittämiä. Muista, että
+`assert`-ominaisuus aktivoituu vain kun java-virtuaalikoneen käynnistää
+`-ea`-optiolla.
+
 ***B.*** Seuraava rutiini `capitalize` käy läpi annetun merkkijonon sana
 kerrallaan ja suurentaa jokaisen sanan ensimmäisen kirjaimen isoksi
 kirjaimeksi, jos muunnokselle on tarvetta. Rutiinia voidaan käyttää
@@ -296,6 +319,9 @@ odotetun tuloksen vastaavuutta eri syötteillä.
 Huomaa, että alkuehto rajoittaa generoitavien testitapausten joukkoa.
 Testiluokan alussa olevat esimerkit antavat vinkkiä, miten testitapauksia
 voi rajata tehtävän kontekstissa.
+
+Huom! Voit myös tässä B-kohdan tehtävässä rakentaa ominaisuustestin
+sijaan 5 kpl ominaisuutta testaavia yksikkötestitapauksia.
 
 ### Pisteytys
 
