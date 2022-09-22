@@ -33,7 +33,8 @@ public class Tehtava6ATests {
         return t.length == Tehtava6.sqr(t).length;
     }
 
-    @Property // hmmmm tän toiminnallisuus???
+    /*
+    @Property // hmmmm tän toiminnallisuus, ominaisuustesti???
     boolean areBiggerThanZero(@ForAll int[] t) {
         int[] RESULT = Tehtava6.sqr(t);
         for(int x : RESULT)
@@ -44,6 +45,7 @@ public class Tehtava6ATests {
             }
         return true;
     }
+    */
 
 
     // TODO: Tehtävä 6a: Kirjoita tähän pyydetyt ominaisuustestit
