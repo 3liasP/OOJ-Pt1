@@ -53,7 +53,10 @@ public class Tehtava3 {
      *       studentNumber != null &&
      *       studentNumber.length() > 0 &&
      *       FORALL(i : 0 <= i < studentNumber.length(); Character.isDigit(studentNumber.charAt(i)))
-     * Rutiinin alkuehto määrittelee
+     * Rutiinin alkuehto määrittelee, että rutiinille parametrinä annettava Student -tyyppinen taulukko ei saa olla tyhjä.
+     * Lisäksi toisena rutiinin parametrinä annettava studentNumber ei saa olla myöskään tyhjä.
+     * Viimeisenä ehtona tarkistetaan, että parametrinä annettu merkkijonotyyppinen studentNumber koostuu vain numeroista,
+     * eli sen jokainen merkki on numero.
      * @.post EI MÄÄRITETTY
      */
     Student findStudent(Student[] students, String studentNumber) {
@@ -65,6 +68,10 @@ public class Tehtava3 {
      *          s.getStudentNumber ().equals(studentNumber)) ==> (RESULT != null)) &&
  *           (RESULT.getStudentNumber().equals(studentNumber) &&
      *          (!EXISTS(s : students; s.getStudentNumber().equals(studentNumber))) ==> (RESULT == null))`
+     * Rutiinin tarkastelee sille parametrinä annettua Student-tyyppistä taulukkoa, ja tarkastaa, että yksittäinen Student-olion
+     * opiskelijanumero (studentNumber) siinä vastaa rutiinille parametrinä annettua opiskelijanumeroa ja rutiinin palauttama arvo
+     * ei saa olla tyhjä. Lisäksi rutiinin palauttaman Student-olion 
+     * löytyy 
      */
     Student findStudent2(Student[] students, String studentNumber) {
         return null; // ei toteutettu
