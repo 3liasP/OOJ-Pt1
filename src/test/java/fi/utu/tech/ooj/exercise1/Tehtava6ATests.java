@@ -28,6 +28,24 @@ public class Tehtava6ATests {
         return true;
     }
 
+    @Property
+    boolean lengthIsSame(@ForAll int[] t) {
+        return t.length == Tehtava6.sqr(t).length;
+    }
+
+    @Property // hmmmm tän toiminnallisuus???
+    boolean areBiggerThanZero(@ForAll int[] t) {
+        int[] RESULT = Tehtava6.sqr(t);
+        for(int x : RESULT)
+            if (x == 0){
+                return true;
+            } else if (x < 0) {
+                return false;
+            }
+        return true;
+    }
+
+
     // TODO: Tehtävä 6a: Kirjoita tähän pyydetyt ominaisuustestit
 
     // TODO: Tehtävä 6a: Vaihtoehtoisesti, kirjoita tähän 5 kpl ominaisuutta testaavaa yksikkötestiä

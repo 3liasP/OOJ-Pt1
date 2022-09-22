@@ -6,7 +6,10 @@ public class Tehtava3 {
     }
 
     /**
-     * @.pre s != null && s.length() > 0 && times >= 0
+     * @.pre s != null && s.length() > 0 && times >= 0 
+     * Rutiinin alkuehto määrittelee, että rutiinille annettava merkkijonotyyppinen
+     * parametri "s" ei saa olla tyhjä ja sen pituus tulee olla suurempi kuin 0 ja 
+     * rutiinille annettava kokonaislukutyyppinen muuttuja times tulee olla suurempi kuin 0
      * @.post EI MÄÄRITETTY
      */
     String repeatString(String s, int times) {
@@ -15,6 +18,9 @@ public class Tehtava3 {
 
     /**
      * @.pre allStudents != null && FORALL(s : allStudents; s != null)
+     * Rutiinin alkuehto määrittelee, että rutiinille parametrinä
+     * annettava Student -tyyppinen taulukko ei saa olla tyhjä ja
+     * mikään taulukon sisältämistä alkioista ei saa olla tyhjä 
      * @.post EI MÄÄRITETTY
      */
     public Student[] getActiveStudents(Student[] allStudents) {
@@ -27,6 +33,16 @@ public class Tehtava3 {
      *        RESULT.length() <= 2*s.length() &&
      *        RESULT.substring(0, s.length()).equals(s) &&
      *        new StringBuilder(RESULT).reverse().toString().equals(RESULT)
+     * Rutiinin loppuehto määrittelee, että rutiinille parametrina annettavan 
+     * merkkijonon s pituus tulee olla lyhyempi tai yhtä pitkä kun rutiinin
+     * palauttaman merkkijonon pituus. Lisäksi rutiinin palauttaman merkkijonon
+     * pituus tulee olla lyhyempi tai yhtä suuri, kuin parametrinä saadun merkkijonon
+     * s pituus kerrottuna kahdella. Lisäksi palautettavasta merkkijonosta muodostettava
+     * "alimerkkijono", joka muodostuu palautettavan merkkijonon ensimmäisestä merkistä palautettavan
+     * merkkijonon merkkiin jonka indeksinumero on sama kuin alkuperäisen pituus, tulee olla vastaava
+     * kuin alkuperäinen parametrinä saatava merkkijono. Täten tarksitetaan, että alimerkkijono ja
+     * parametrinä saatava merkkijono ovat samoja. Viimeisenä loppuehtona luodaan uusi Strinbuilder-olio,
+     * jonka avulla tarkastisteaan, että palautettava merkkijono on peilikuva palautettavasta merkkijonosta.
      */
     String generatePalindrome(String s) {
         return new StringBuilder(s).reverse().toString();
@@ -37,6 +53,7 @@ public class Tehtava3 {
      *       studentNumber != null &&
      *       studentNumber.length() > 0 &&
      *       FORALL(i : 0 <= i < studentNumber.length(); Character.isDigit(studentNumber.charAt(i)))
+     * Rutiinin alkuehto määrittelee
      * @.post EI MÄÄRITETTY
      */
     Student findStudent(Student[] students, String studentNumber) {
