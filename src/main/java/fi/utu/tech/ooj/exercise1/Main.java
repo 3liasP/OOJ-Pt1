@@ -22,6 +22,6 @@ public class Main {
         // TODO: Tehtävä 7: käsittele seuraavat tapaukset oikein
 
         //Tehtava7.processKeyValuePairsFromStringTaskB("pituus=paljon leveys=vähän massa=eiole");
-        //Tehtava7.processKeyValuePairsFromStringTaskC("eiTässäOleMitäänPareja");
+        Tehtava7.processKeyValuePairsFromStringTaskC("pituus=paljon leveys=vähän massa=eiole");
     }
 }

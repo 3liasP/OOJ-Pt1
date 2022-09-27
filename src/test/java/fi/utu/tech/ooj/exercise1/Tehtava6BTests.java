@@ -24,6 +24,13 @@ public class Tehtava6BTests {
     }
 
     // TODO: Tehtävä 6b: Kirjoita tähän pyydetyt ominaisuustestit
+    @Property
+    boolean capitalizeWords(@ForAll("nonBlankStrings") String s){
+        if(s != null && s.isBlank() == false) {
+            if(Tehtava6.capitalize(s).isBlank() == false) return true;
+        }
+        return false;
+    }
 
     // TODO: Tehtävä 6b: Vaihtoehtoisesti, kirjoita tähän 5 kpl ominaisuutta testaavaa yksikkötestiä
 }

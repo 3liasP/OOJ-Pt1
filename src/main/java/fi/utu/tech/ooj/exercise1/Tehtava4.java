@@ -4,8 +4,9 @@ class Numeroija {
     static int laskuri = 1;
     /**
      Tehtävä 4 B)
-     Numeroija-luokka ja sen sisältämä funktio "numeroi" toimii oikein ja sen määrittelyn sen mukaisesti.
-     Jokainen funktion instanssi jatkaa numerointia edellistä kirjanpidon rivinumerosta.
+     Numeroija-luokasta luodut instanssit ei pidä itsenäisesti kirjaa numeroinnista, vaan ne ovat yhteydessä
+     toisiinsa. Tällöin voi esiintyä odottamattomia sivuvaikutuksia. Korjauksena esimerkiksi laskuri -muuttujat
+     voisi muuttaa yksityisiksi muuttujiksi.
      */
     void numeroi(String[] rivit) {
         int uusiLaskuri = laskuri; // tämä puuttui alunperin tästä tiedostosta, mutta tämä rivi näkyy tehtävänannossa

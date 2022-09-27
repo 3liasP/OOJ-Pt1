@@ -15,11 +15,14 @@ public class Tehtava5 {
         C. FORALL(x : arr; EXISTS(y : RESULT; x == y))
         D. FORALL(x : RESULT; EXISTS(y : arr; x == y))
 
-       I   J   K   L   M
-    A     
-    B
-    C          x   x   x
-    D     x    x       x
+    VASTAUS:
+
+
+       I J K L M
+    A  x   
+    B  x   x x 
+    C      x x x
+    D   x  x   x
 
      */
     public int[] withoutDuplicates(int[] arr) {
